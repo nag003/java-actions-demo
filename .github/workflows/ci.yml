@@ -27,6 +27,14 @@ jobs:
         - name: Build with Gradle
           run: ./gradlew build
 
+        # List JAR file and its path
+        - name: List JAR file
+          run: |
+            echo "Listing JAR files in build/libs:"
+            ls -al build/libs
+            echo "Full path of the JAR file:"
+            find "$(pwd)" -name "*.jar"
+
         - name: Setup Docker BuildX
           uses: docker/setup-buildx-action@v3
 
